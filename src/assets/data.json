@@ -1,0 +1,17 @@
+[{
+    "id":1,
+    "task": "Buy a new gamming laptop",
+    "completed":false
+},{
+    "id":2,
+    "task": "Complete a previous task",
+    "completed":false
+},{
+    "id":3,
+    "task": "Create video for Youtube",
+    "completed":true
+},{
+    "id":4,
+    "task": "Create a new portafolio site",
+    "completed":true    
+}]

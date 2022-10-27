@@ -1,0 +1,80 @@
+
+.container{
+  margin: auto;
+  width: 20%;
+  border: 1px solid rgb(24, 25, 26);
+  background-color: #fff;
+  padding: 10px;
+  height: 400px;
+}
+
+h1{
+  padding: 10px;
+}
+
+.placeholder{
+  margin: 10px;
+  height: 30px;
+  padding: 10px;
+  font-size: 1.5em;
+} 
+
+
+
+
+input::placeholder{
+  font-size: 1.3em;
+}
+
+
+.add-btn-delete{
+  float: right;
+  /* background-color: red; */
+  color: red;
+}
+
+.add-btn-delete:hover{
+  transform: scale(1.2);
+}
+
+
+.TaskList{
+  
+  /* border: 1px solid rgb(10, 9, 9); */
+  background-color: #fff;
+  padding: 10px;
+}
+
+.add-btn-edit{
+  float: right;
+  /* background-color: aqua; */
+  color: blue;
+}
+
+
+.add-btn-edit:hover{
+  transform: scale(1.2);
+}
+
+.container-final{
+  font-size: 20px;
+  padding: 10%;
+}
+
+
+.button-clear{
+  float: right;
+  background-color: red;
+  color: #fff;
+  padding: 10px;  
+}
+
+.button-clear:hover{
+  transform: scale(1.2);
+}
+
+
+.cruz{
+  color: rgb(198, 198, 216);
+  background-color: rgb(16, 182, 248);
+}
