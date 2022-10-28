@@ -13,7 +13,6 @@ function  TaskList({task, onComplete, onDeleteItem, onEditItem}) {
             <Task key={`todo-${index}`} task = {task} onComplete = {onComplete} onDeleteItem = {onDeleteItem} onEditItem = {onEditItem}/>
         ))
          }
-
     </div>
   )
 }

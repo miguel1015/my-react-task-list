@@ -15,7 +15,7 @@ import React from 'react'
       onChange={()=> onComplete(task.id)}/>
       {task.task}
       <button className='add-btn-delete' onClick={()=>onDeleteItem(task.id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-      <button className='add-btn-edit'onClick={()=>onEditItem(todo.id)}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+      <button className='add-btn-edit'onClick={()=>onEditItem(task.id)}><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
     </div>
   )
 }
