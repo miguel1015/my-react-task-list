@@ -5,19 +5,26 @@ import TaskList from "./assets/componentes/TaskList"
 import Task from './assets/componentes/Task'
 import Header from './assets/componentes/Header'
 
+
+
 function App() {
   const [task, setTask] = useState(data);
 
-  const onComplete =(id) => {
+  //completar Tarea---------------------------
 
+  const onComplete =(id) => {
     setTask(task. map((task) =>{
       return task.id === Number(id) ? {...task, completed: !task.completed}: {...task};
     }))
   }
 
+  //Eliminar Tarea-----------------------------
+
   const onDeleteItem = (id) => {
     setTask([...task].filter(task => task.id !== id))
   }
+
+  //Agregar Tarea-------------------------------
 
   const addTask = (newTask)=>{
     console.log(' true', newTask)
@@ -25,6 +32,8 @@ function App() {
     
     setTask([...task, newItem])
   }
+
+  //Editar Tarea--------------------------------
 
   const onEditItem = (id)=>{
     let newEditItem = task.find((element)=>{
@@ -42,14 +51,14 @@ function App() {
     }
   }
 
+  //Guardar en el local-------------------------
+
   useEffect(()=>{
     let data = localStorage.getItem('tasks')
     if (data){
       setTask(JSON.parse(data))
     } 
   },[])
-
-
   useEffect(()=>{
     localStorage.setItem('tasks', JSON.stringify(task)) 
   },[task])
