@@ -9,6 +9,7 @@ import Header from './assets/componentes/Header'
 
 function App() {
   const [task, setTask] = useState(data);
+  const {description, setDescription} = task
 
   //completar Tarea---------------------------
 
@@ -26,12 +27,21 @@ function App() {
 
   //Agregar Tarea-------------------------------
 
-  const addTask = (newTask)=>{
+  const addTask = (newTask , dess="DESCRIPCIONB POR DEFECTO")=>{
     console.log(' true', newTask)
-    let newItem = {id : +new Date(), task: newTask, completed: false};
+    let newItem = {id : +new Date(), task: newTask, completed: false, description:  dess};
     
     setTask([...task, newItem])
   }
+
+//Descripcion-------------------------------------
+  const  addDescription = (descripcionTask)=>{
+    console.log("true", descripcionTask)
+    let newDescription = {id : +new Date(), description:descripcionTask, completed:false}
+    setDescription([...description, newDescription])
+  }
+
+
 
   //Editar Tarea--------------------------------
 
@@ -43,12 +53,17 @@ function App() {
     let newTask = localStorage.getItem("task");
     if (newEditItem.value !==""){
       let resultado = JSON.parse(newTask);
-      resultado.splice(newEditItem,1,{title : newEditItem, id : newEditItem});
+      resultado.splice(newEditItem,{title : newEditItem, id : newEditItem});
 
       console.log(resultado)
       setTask(resultado);
       console.log(resultado,title)
     }
+  }
+
+
+  const descripcion = (id) => {
+    console.log(id)
   }
 
   //Guardar en el local-------------------------
@@ -65,11 +80,27 @@ function App() {
 
 
 
+  
+
+  useEffect(()=>{
+    let data = localStorage.getItem('descripcion')
+    if (data){
+      // setDescription(JSON.parse(data))
+    } 
+  },[])
+  useEffect(()=>{
+    localStorage.setItem('descripcion', JSON.stringify(description)) 
+  },[description])
+
+
+
+
+
   return(
     <div className='container'>
       <h1>Todo App</h1>
-      <Header addTask={addTask}/>
-      <TaskList task = {task} onComplete = {onComplete} onDeleteItem = {onDeleteItem} onEditItem = {onEditItem}/>
+      <Header addTask={addTask} descriptionTask={addDescription}/>
+      <TaskList task = {task} onComplete = {onComplete} onDeleteItem = {onDeleteItem} onEditItem = {onEditItem} description = {description}/>
 
       <div className='container-final'>
         <p>You have 2 pending tasks

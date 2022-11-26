@@ -4,7 +4,7 @@
   width: 20%;
   border: 1px solid rgb(24, 25, 26);
   background-color: #fff;
-  padding: 10px;
+  padding: 20px;
   /* height: 400px; */
 }
 
@@ -42,7 +42,7 @@ input::placeholder{
   
   /* border: 1px solid rgb(10, 9, 9); */
   background-color: #fff;
-  padding: 10px;
+  padding: 30px;
 }
 
 .add-btn-edit{
@@ -77,4 +77,20 @@ input::placeholder{
 .cruz{
   color: rgb(198, 198, 216);
   background-color: rgb(16, 182, 248);
+}
+
+.description{
+  float: right;
+  /* background-color: red; */
+  color: rgb(17, 16, 16);
+}
+
+.description:hover{
+  transform: scale(1.2);
+}
+
+
+.boton-description{
+  padding: 1.1%; 
+  color: rgb(248, 10, 10);
 }
