@@ -4,12 +4,15 @@ import './App.css'
 import TaskList from "./assets/componentes/TaskList"
 import Task from './assets/componentes/Task'
 import Header from './assets/componentes/Header'
+import { Flex, Heading } from "@chakra-ui/react"
+
 
 
 
 function App() {
   const [task, setTask] = useState(data);
   const {description, setDescription} = task
+
 
   //completar Tarea---------------------------
 
@@ -97,6 +100,7 @@ function App() {
 
 
   return(
+    <div>
     <div className='container'>
       <h1>Todo App</h1>
       <Header addTask={addTask} descriptionTask={addDescription}/>
@@ -108,6 +112,19 @@ function App() {
         </p>
       </div>
     </div>
+    <Flex height="10vh" alignItems="center" justifyContent="center">
+      <Flex direction="column" background="gray.100" p={12} rounded={6}>
+        <Heading mb={6}>
+          comentary
+        </Heading>
+        <input type="text" placeholder='add your comentary'variant="filled" mb={3} />
+        <button mb={6} colorSheme="teal">
+          press
+        </button>
+      </Flex>
+    </Flex>
+    </div>
+    
 
   )
 
